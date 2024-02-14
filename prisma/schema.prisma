@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Artist {
+  id           BigInt         @id @default(autoincrement())
+  title        String
+  track2Artist Track2Artist[]
+
+  @@unique([title])
+  @@map("artist")
+}
+
+model Album {
+  id    BigInt    @id @default(autoincrement())
+  title String
+  year  DateTime?
+  Track Track[]
+
+  @@unique([title])
+  @@map("album")
+}
+
+model Genre {
+  id    BigInt  @id @default(autoincrement())
+  title String
+  Track Track[]
+
+  @@unique([title])
+  @@map("genre")
+}
+
+model Track {
+  id           BigInt         @id @default(autoincrement())
+  track2Artist Track2Artist[]
+  title        String
+  album_fk     BigInt
+  album        Album          @relation(fields: [album_fk], references: [id])
+  genre_fk     BigInt
+  genre        Genre          @relation(fields: [genre_fk], references: [id])
+  url          String
+
+  @@map("track")
+}
+
+model Track2Artist {
+  id        BigInt @id @default(autoincrement())
+  track_fk  BigInt
+  track     Track  @relation(fields: [track_fk], references: [id])
+  artist_fk BigInt
+  artist    Artist @relation(fields: [artist_fk], references: [id])
+
+  @@map("track2artist")
+}
+
+model User {
+  id       BigInt @id @default(autoincrement())
+  login    String
+  password String
+
+  @@map("user")
+}
