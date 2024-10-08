@@ -1,23 +1,20 @@
+const Storage = (() => {
+  return Object.freeze({
+    write:
+      (key: string, data: string) => {
+        if (typeof localStorage !== 'undefined') {
+          localStorage.setItem(key, data);
+        }
+      },
+    read:
+      (key: string): string | null => {
+        if (typeof localStorage !== 'undefined') {
+          return localStorage.getItem(key);
+        }
+        return null;
+      },
+  })
+})()
 
-function saveToLocalStorage(key: string, data: string): void {
-  if (typeof localStorage !== 'undefined') {
-    localStorage.setItem(key, data);
-  }else{
 
-  }
-}
-
-function readFromLocalStorage(key: string): string | undefined {
-
-  if (typeof localStorage !== 'undefined') {
-    const dataString = localStorage.getItem(key);
-    if (dataString == null) {
-      return undefined;
-    }
-    return dataString;
-  }else{
-    return ''
-  }
-}
-
-export {readFromLocalStorage, saveToLocalStorage};
+export {Storage};

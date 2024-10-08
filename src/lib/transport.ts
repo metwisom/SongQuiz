@@ -1,18 +1,17 @@
 import ResponseData from '@/internal/ResponseData';
-import {readFromLocalStorage} from '@/lib/localStorage';
+import {Storage} from '@/lib/localStorage';
 
 type headers = {
   'Content-Type': string
-  Authorization?: string
+  'Authorization'?: string
 }
 
 const Transport = (() => {
 
-
   return Object.freeze({
     async get<T>(url: string): Promise<T> {
       return new Promise(async (resolve, reject) => {
-        const Authorization = readFromLocalStorage('token');
+        const Authorization = Storage.read('token');
         const headers: headers = {
           'Content-Type': 'application/json',
         };
@@ -34,7 +33,7 @@ const Transport = (() => {
 
     async post<T>(url: string, body: any): Promise<T> {
       return new Promise(async (resolve, reject) => {
-        const Authorization = readFromLocalStorage('token');
+        const Authorization = Storage.read('token');
         const headers: headers = {
           'Content-Type': 'application/json',
         };

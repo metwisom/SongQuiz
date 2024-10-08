@@ -1,11 +1,15 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import {ProfileWidget} from '@/components/profileWidget';
+
+const Header = styled.header`
+  position: relative;
+  text-align: center;
+`
 
 const NavList = styled.div`
-  display: block;
+  display: inline-block;
   width: auto;
-  margin: auto;
-  text-align: center;
 `
 
 const NavLink = styled(Link)`
@@ -14,14 +18,18 @@ const NavLink = styled(Link)`
   display: inline-block;
   font-weight: bold;
   text-decoration: none;
-  &:hover{
+
+  &:hover {
     text-decoration: underline;
   }
 `
 
 export default function Navbar(){
-  return <NavList>
-    <NavLink href={'/'}>Начало</NavLink>
-    <NavLink href={'/songs'}>Список песен</NavLink>
-  </NavList>
+  return <Header>
+    <NavList>
+      <NavLink href={'/'}>Начало</NavLink>
+      <NavLink href={'/songs'}>Список песен</NavLink>
+    </NavList>
+    <ProfileWidget/>
+  </Header>
 }

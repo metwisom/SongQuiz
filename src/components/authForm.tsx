@@ -16,13 +16,12 @@ export default function AuthForm() {
   const loginRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const {token, setNewToken} = useAppState();
-  const a = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const takeAuth = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const login = loginRef.current?.value;
     const password = passwordRef.current?.value;
-    Transport.post<AuthResponse>('/api/user/auth', {
-      login, password,
-    }).then(e => {
+    Transport.post<AuthResponse>('/api/user/auth', {login, password})
+    .then(e => {
       setNewToken(e.token);
     });
 
@@ -30,6 +29,6 @@ export default function AuthForm() {
   return <Form>
     <Input ref={loginRef} placeholder={'Логин'} name={'login'}/>
     <Input ref={passwordRef} placeholder={'Пароль'} name={'password'}/>
-    <Button onClick={a}>Вход</Button>
+    <Button onClick={takeAuth}>Вход</Button>
   </Form>;
 }

@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import SongInBase from '@/components/songInBase/songInBase';
-import AuthForm from '@/components/AuthForm';
+import AuthForm from '@/components/authForm';
 import {useAppState} from '@/lib/AppState';
 import ModalFrame from '@/components/modalFrame';
 import {useState} from 'react';
-import Player from '@/components/player';
+import AudioPlayer from '@/components/audioPlayer';
 
 type IndexProps = {
   a:string
@@ -21,17 +21,11 @@ const Button = styled(Link)`
 
 export default function Index({a}: IndexProps) {
 
-  const [isActive,setIsActive] = useState(false)
 
-  const {token, setNewToken} = useAppState();
   return <div>
-    {token}
     <SongInBase/>
-    <ModalFrame isActive={isActive}>
-      <AuthForm/>
-    </ModalFrame>
-    <Player/>
-    <button onClick={() => setIsActive(!isActive)} >Войти</button>
+
+    <AudioPlayer audioUrl={'/files/a0d9fd3ee8f80b35e2df3a01d1ef784d.mp3'}/>
     <h1>Hello, s!11 - {a}</h1>
     <Button href={'/test'}>Тест</Button>
   </div>

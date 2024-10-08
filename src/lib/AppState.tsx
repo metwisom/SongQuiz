@@ -1,30 +1,18 @@
-import React, {
-  createContext,
-  Dispatch,
-  ReactElement,
-  ReactNode,
-  SetStateAction,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
-import {readFromLocalStorage} from '@/lib/localStorage';
+import React, {createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState} from 'react';
+import {Storage} from '@/lib/localStorage';
 
-// Определение типа для состояния
 type AppStateType = {
   token: string | null;
   setNewToken: Dispatch<SetStateAction<string>>;
 };
 
-// Создание контекста
 const AppStateContext = createContext<AppStateType>({} as AppStateType);
 
-// Компонент-провайдер, который обеспечивает доступ к глобальному состоянию
 export const AppStateProvider = ({children}: { children: ReactNode }) => {
   const [token, setNewToken] = useState('');
 
   useEffect(() => {
-    setNewToken(readFromLocalStorage('token') ?? '')
+    setNewToken(Storage.read('token') ?? '')
   }, []);
 
   return (
@@ -34,9 +22,4 @@ export const AppStateProvider = ({children}: { children: ReactNode }) => {
   );
 };
 
-// Хук для использования состояния в компонентах
-export const useAppState = () => {
-  const context = useContext(AppStateContext);
-
-  return context;
-};
+export const useAppState = () => useContext(AppStateContext);

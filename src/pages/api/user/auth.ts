@@ -26,7 +26,7 @@ export default async function handler(
       return res.status(404).json({data: {}, error: 'user_not_found'});
     }
 
-    const newToken = await Auth.createToken(user.id);
+    const newToken = await Auth.createToken(user);
 
 
     res.status(201).json({data: {token: newToken}});

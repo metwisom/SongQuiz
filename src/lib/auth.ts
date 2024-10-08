@@ -12,15 +12,14 @@ const Auth = (() => {
         return false;
       }
       let token = jwt.split(' ').pop();
-      console.log(token)
       if(token) {
         return await jose.compactVerify(token, secret)
         .then(e => true)
         .catch(e => false);
       }
     },
-    createToken: async (user_id: bigint) => {
-      return new jose.SignJWT({'userId': Number(user_id)})
+    createToken: async ({id, login}: { id: bigint, login: string }) => {
+      return new jose.SignJWT({'userId': Number(id), login})
       .setProtectedHeader({alg})
       .setIssuedAt()
       .setExpirationTime('2h')

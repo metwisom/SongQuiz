@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ed71069-5ba9-4ddd-86be-8bbe2750a3ed" name="Changes" comment="init" />
+    <list default="true" id="1ed71069-5ba9-4ddd-86be-8bbe2750a3ed" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/components/audioPlayer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/profileWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/defaultLayout/Test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/defaultLayout/Test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/defaultLayout/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/defaultLayout/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/player.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/internal/model/album.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/internal/model/album.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/internal/model/artist.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/internal/model/artist.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/internal/model/genre.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/internal/model/genre.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/AppState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/AppState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/localStorage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/localStorage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/transport.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/transport.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/api/upload/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/api/upload/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/api/user/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/api/user/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +34,13 @@
   <component name="ChangesViewManager">
     <option name="groupingKeys">
       <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTTP Request" />
+      </list>
     </option>
   </component>
   <component name="FormatOnSaveOptions">
@@ -42,15 +70,21 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/metwi/projects/repos/SongQuiz&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\metwi\\projects\\repos\\SongQuiz\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -62,12 +96,22 @@
       <recent name="C:\Users\metwi\projects\repos\SongQuiz\src\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\metwi\projects\repos\SongQuiz" />
       <recent name="C:\Users\metwi\projects\repos\SongQuiz\src\components\defaultLayout" />
       <recent name="C:\Users\metwi\projects\repos\SongQuiz\src\components" />
       <recent name="C:\Users\metwi\projects\repos\SongQuiz\src\pages" />
       <recent name="C:\Users\metwi\projects\repos\SongQuiz\src\internal" />
-      <recent name="C:\Users\metwi\projects\repos\SongQuiz\src\pages\api\upload" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="test | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.test | #1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -86,6 +130,12 @@
       <workItem from="1707927899877" duration="851000" />
       <workItem from="1707926049132" duration="11774000" />
       <workItem from="1707949128316" duration="51000" />
+      <workItem from="1707985220674" duration="4797000" />
+      <workItem from="1707995605891" duration="93000" />
+      <workItem from="1708011244075" duration="651000" />
+      <workItem from="1708011914551" duration="448000" />
+      <workItem from="1708070207199" duration="71000" />
+      <workItem from="1708467531367" duration="528000" />
     </task>
     <task id="LOCAL-00001" summary="initgit push -u origin main">
       <option name="closed" value="true" />

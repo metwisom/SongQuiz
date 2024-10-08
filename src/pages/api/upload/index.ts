@@ -5,7 +5,7 @@ import jsmediatags from 'jsmediatags';
 import {addTrack} from '@/internal/model/track';
 import * as fs from 'fs';
 import crypto from 'crypto';
-import {execFile} from 'child_process';
+import {execFile, ExecFileException} from 'child_process';
 
 export const config = {
   api: {
@@ -27,7 +27,7 @@ export default async function handler(
     const form = formidable();
 
 
-    new Promise((resolve, reject) => {
+    new Promise<ResponseData>((resolve, reject) => {
 
       form.parse(req, (err, fields, files) => {
         if (err) {
@@ -76,14 +76,14 @@ export default async function handler(
 
                     const {execFile} = require('child_process');
                     const args = ['-i', newPath, '-ar', '44100', '-ac', '1', '-ab', '192 ', '-f', 'mp3', './public/files/' + md5 + '.mp3']; // Аргументы запуска программы
-                    const childProcess = execFile('ffmpeg.exe', args, (error, stdout, stderr) => {
+                    const childProcess = execFile('ffmpeg.exe', args, (error:(ExecFileException | null), stdout: string, stderr: string) => {
                       if (error) {
                         reject_file('fail');
                         console.error('Произошла ошибка при запуске программы:', error);
                         return;
                       }
                     });
-                    childProcess.on('exit', async (code) => {
+                    childProcess.on('exit', async (code:string) => {
 
                       console.log('[' + file_number + ']: ffmepeg отработал');
 
